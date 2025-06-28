@@ -1,58 +1,88 @@
 #mysearch {
-    @apply animate-in fade-in duration-200;
+  animation-duration: 200ms;
+  animation-name: fade-in;
+  animation-fill-mode: both;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 #mysearch-box {
-    animation: 200ms cubic-bezier(0, 0, 0.2, 1) 0s 1 normal both running openAnimation;
+  animation: 200ms cubic-bezier(0, 0, 0.2, 1) 0s 1 normal both running openAnimation;
 }
 
 #mysearch em {
-    @apply not-italic text-emerald-500;
+  font-style: normal;
+  color: rgb(99 102 241);
 }
 
 .text-color-inherit {
-    color: inherit
+  color: inherit;
 }
 
-@media (min-width: 1200px) {
-    .xl\:max-h-832 {
-        max-height: 800px
-    }
+@media (width >= 1200px) {
+  .xl\:max-h-832 {
+    max-height: 800px;
+  }
 }
 
 #mysearch-list li.inactive {
-    @apply border-slate-200;
+  border-color: rgb(226 232 240);
 }
 
 #mysearch-list li.inactive > a.link {
-    @apply text-slate-900 bg-transparent;
+  background-color: transparent;
+  color: rgb(15 23 42);
 }
 
 #mysearch-list li.inactive .icon-enter {
-    @apply hidden;
+  display: none;
 }
 
-#mysearch-list li.inactive i.icon, #mysearch-list li.inactive .sub-intro {
-    @apply text-slate-400;
+#mysearch-list li.inactive i.icon,
+#mysearch-list li.inactive .sub-intro {
+  color: rgb(148 163 184);
 }
 
 #mysearch-list li.active {
-    @apply border-transparent z-10 shadow-sm;
+  z-index: 10;
+  border-color: transparent;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
 }
 
 #mysearch-list li.active > a {
-    @apply text-white bg-emerald-500 shadow;
+  background-color: rgb(99 102 241);
+  color: rgb(255 255 255);
+  box-shadow:
+    0 1px 3px 0 rgb(0 0 0 / 10%),
+    0 1px 2px -1px rgb(0 0 0 / 10%);
 }
 
 #mysearch-list li.active em {
-    color: inherit;
-    @apply underline;
+  color: inherit;
+  text-decoration-line: underline;
 }
 
 #mysearch-list li.active .icon-enter {
-    @apply block;
+  display: block;
 }
 
-#mysearch-list li.active i.icon, #mysearch-list li.active .sub-intro {
-    @apply text-white;
+#mysearch-list li.active i.icon,
+#mysearch-list li.active .sub-intro {
+  color: rgb(255 255 255);
+}
+
+/* Ensure search result items have no fade-in animation */
+#mysearch-list li {
+  animation: none !important;
+  transition:
+    background-color 0.1s ease-in-out,
+    border-color 0.1s ease-in-out;
 }

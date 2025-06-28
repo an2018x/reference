@@ -2,13 +2,10 @@
 title: Sponsor
 date: 2021-12-11 14:37:13
 intro: |
-    We appreciate your help in order to pay for the hosting fees and ensuring I can spend enough time to create and optimize the cheatsheet webpage.
+  We appreciate your help in order to pay for the hosting fees and ensuring I can spend enough time to create and optimize the cheatsheet webpage.
 ---
 
-Sponsor
----------------
-
-
+## Sponsor
 
 ### Become a sponsor
 
@@ -25,9 +22,6 @@ Sponsor
     </a>
 </div>
 
-
-
-
 ### Support with Crypto {.col-span-2}
 
 <div class="row-span-3 dark:text-slate-300 p-4">
@@ -41,25 +35,22 @@ Sponsor
         <span>0x38415CEb0215b69cF67f6750cf69c2c9b609873a</span>
     </div>
     <div class="flex items-center mt-3">
-        <a class="text-blue-500" target="_blank" rel="noopener external nofollow noreferrer" href="https://twitter.com/QuickRef_ME">Request more...</a>
+        <a class="text-blue-500" target="_blank" rel="noopener external nofollow noreferrer" href="https://twitter.com/FechinLi">Request more...</a>
     </div>
 </div>
 
 ### Sponsors {.col-span-3}
 
-
-| Name            | Amount  | Message                                                                           |
-|-----------------|---------|-----------------------------------------------------------------------------------|
-| Benjamin Schröer| $ 9.34  | Thanks for quickref.me!                                                           |
-| Fabian Barajas  | $ 10.00 |                                                                                   |
-| [Anonymous]     | $ 5.00  |                                                                                   |
-| [Anonymous]     | $ 20.00 | Your page is the best reference I've ever come across and I'm sharing it with everyone I know. Thanks so much for creating it! |
-| Tony Qu         | $ 20.00 | Thanks Man ! This looks nice. :-)                                                 |
-| [Anonymous]     | $ 25.00 | As a newcomer to Python, this looks incredibly useful. Thanks for your hard work! |
-| VimNewbie       | $ 10.00 | Awesome and elegant...  fantastic job!                                            |
-| Dave Hanson     | $ 50.00 | Nice.. great work...                                                              |
-| Alexander       | $ 40.00 | -                                                                                 |
-| Frpsi17         | $ 10.00 | I think I just found the greatest site for cheatsheets,Thanks                     |
-| [Anonymous]     | $ 5.00  | Awesome! Thank you!                                                               |
-
-
+| Name             | Amount  | Message                                                                                                                        |
+| ---------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Benjamin Schröer | $ 9.34  | Thanks for cheatsheets.zip!                                                                                                    |
+| Fabian Barajas   | $ 10.00 |                                                                                                                                |
+| [Anonymous]      | $ 5.00  |                                                                                                                                |
+| [Anonymous]      | $ 20.00 | Your page is the best reference I've ever come across and I'm sharing it with everyone I know. Thanks so much for creating it! |
+| Tony Qu          | $ 20.00 | Thanks Man ! This looks nice. :-)                                                                                              |
+| [Anonymous]      | $ 25.00 | As a newcomer to Python, this looks incredibly useful. Thanks for your hard work!                                              |
+| VimNewbie        | $ 10.00 | Awesome and elegant... fantastic job!                                                                                          |
+| Dave Hanson      | $ 50.00 | Nice.. great work...                                                                                                           |
+| Alexander        | $ 40.00 | -                                                                                                                              |
+| Frpsi17          | $ 10.00 | I think I just found the greatest site for cheatsheets,Thanks                                                                  |
+| [Anonymous]      | $ 5.00  | Awesome! Thank you!                                                                                                            |

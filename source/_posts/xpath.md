@@ -3,23 +3,25 @@ title: XPath
 date: 2020-12-19 22:15:43
 background: bg-[#77aeeb]
 tags:
-    - document
-    - expression
-    - select
+  - document
+  - expression
+  - select
 categories:
-    - Toolkit
+  - Toolkit
 intro: |
-    This is an [XPath](https://en.wikipedia.org/wiki/XPath) selectors cheat sheet, which lists commonly used XPath positioning methods and CSS selectors
+  This is an [XPath](https://en.wikipedia.org/wiki/XPath) selectors cheat sheet, which lists commonly used XPath positioning methods and CSS selectors
+plugins:
+  - copyCode
 ---
 
-XPath Selectors {.cols-6}
---------
+## XPath Selectors {.cols-6}
 
 ### Getting started {.col-span-2}
 
 - [Xpath test bed](http://www.whitebeam.org/library/guide/TechNotes/xpathtestbed.rhtm) _(whitebeam.org)_
 
-Test in Firefox or Chrome console:
+Test in Firefox or Chromium based browser console:
+
 ```console
 $x('/html/body')
 $x('//h1')
@@ -27,39 +29,37 @@ $x('//h1')[0].innerText
 $x('//a[text()="XPath"]')[0].click()
 ```
 
-
-
-### Descendant selectors  {.col-span-2}
+### Descendant selectors {.col-span-2}
 
 | Xpath        | CSS          |
-|--------------|--------------|
+| ------------ | ------------ |
 | `//h1`       | h1           |
 | `//div//p`   | div p        |
 | `//ul/li`    | ul > li      |
 | `//ul/li/a`  | ul > li > a  |
-| `//div/*`    | div > *      |
+| `//div/*`    | div > \*     |
 | `/`          | :root        |
 | `/html/body` | :root > body |
+
 {.show-header}
 
-
-### Order selectors  {.col-span-2}
+### Order selectors {.col-span-2}
 
 | Xpath               | CSS                  |
-|---------------------|----------------------|
+| ------------------- | -------------------- |
 | `//ul/li[1]`        | ul > li:first-child  |
 | `//ul/li[2]`        | ul > li:nth-child(2) |
 | `//ul/li[last()]`   | ul > li:last-child   |
 | `//li[@id="id"][1]` | li#id:first-child    |
 | `//a[1]`            | a:first-child        |
 | `//a[last()]`       | a:last-child         |
-{.show-header}
 
+{.show-header}
 
 ### Attribute selectors {.col-span-3 .row-span-2}
 
 | Xpath                           | CSS                  |
-|---------------------------------|----------------------|
+| ------------------------------- | -------------------- |
 | `//*[@id="id"]`                 | #id                  |
 | `//*[@class="class"]`           | .class               |
 | `//input[@type="submit"]`       | input[type="submit"] |
@@ -69,31 +69,34 @@ $x('//a[text()="XPath"]')[0].click()
 | `//a[ends-with(@href, '.pdf')]` | a[href$='pdf']       |
 | `//a[contains(@href, '://')]`   | a[href*='`:`//']     |
 | `//a[contains(@rel, 'help')]`   | a[rel~='help']       |
+
 {.show-header}
 
+### Siblings {.col-span-3}
 
-### Siblings  {.col-span-3}
 | Xpath                                | CSS      |
-|--------------------------------------|----------|
+| ------------------------------------ | -------- |
 | `//h1/following-sibling::ul`         | h1 ~ ul  |
 | `//h1/following-sibling::ul[1]`      | h1 + ul  |
 | `//h1/following-sibling::[@id="id"]` | h1 ~ #id |
+
 {.show-header}
 
-
 ### jQuery {.col-span-3}
+
 | Xpath                            | CSS                        |
-|----------------------------------|----------------------------|
+| -------------------------------- | -------------------------- |
 | `//ul/li/..`                     | $('ul > li').parent()      |
 | `//li/ancestor-or-self::section` | $('li').closest('section') |
 | `//a/@href`                      | $('a').attr('href')        |
 | `//span/text()`                  | $('span').text()           |
+
 {.show-header}
 
+### Misc selectors {.col-span-3}
 
-### Misc selectors {.col-span-3} 
 | Xpath                             | CSS                       |
-|-----------------------------------|---------------------------|
+| --------------------------------- | ------------------------- | --------------------- |
 | `//h1[not(@id)]`                  | h1:not([id])              |
 | `//button[text()="Submit"]`       | Text match                |
 | `//button[contains(text(),"Go")]` | Text contains (substring) |
@@ -101,46 +104,43 @@ $x('//a[text()="XPath"]')[0].click()
 | `//ul[*]`                         | Has children              |
 | `//ul[li]`                        | Has children (specific)   |
 | `//a[@name or @href]`             | Or logic                  |
-| `//a | //div`                     | Union (joins results)     |
+| `//a                              | //div`                    | Union (joins results) |
+
 {.show-header}
 
-
-
-XPath Expressions
------------
+## XPath Expressions
 
 ### Steps and axes {.secondary}
+
 <br/>
 
 | -    | -    | -    | -               |
-|------|------|------|-----------------|
+| ---- | ---- | ---- | --------------- |
 | `//` | `ul` | `/`  | `a[@id='link']` |
 | Axis | Step | Axis | Step            |
-{.left-text}
 
+{.left-text}
 
 ### Prefixes
 
 | Prefix | Example               | Means    |
-|--------|-----------------------|----------|
+| ------ | --------------------- | -------- |
 | `//`   | `//hr[@class='edge']` | Anywhere |
 | `/`    | `/html/body/div`      | Root     |
 | `./`   | `./div/p`             | Relative |
-{.show-header}
 
+{.show-header}
 
 ### Axes
 
 | Axis | Example             | Means      |
-|------|---------------------|------------|
+| ---- | ------------------- | ---------- |
 | `/`  | `//ul/li/a`         | Child      |
 | `//` | `//[@id="list"]//a` | Descendant |
+
 {.show-header}
 
-
-
-XPath Predicates
-----------
+## XPath Predicates
 
 ### Predicates
 
@@ -166,7 +166,6 @@ Restricts a nodeset only if some condition is true. They can be chained.
 //div[@id="head" and position()=2]
 //div[(x and y) or not(z)]
 ```
-
 
 ### Using nodes
 
@@ -212,8 +211,7 @@ Order is significant, these two are different.
 
 This returns `<section>` if it has an `<h1>` descendant with `id='hi'`.
 
-XPath Functions {.cols-2}
----------
+## XPath Functions {.cols-2}
 
 ### Node functions
 
@@ -229,7 +227,6 @@ namespace-uri()
 count()           # //table[count(tr)=1]
 position()        # //ol/li[position()=2]
 ```
-
 
 ### String functions
 
@@ -249,7 +246,6 @@ normalize-space()
 string-length()
 ```
 
-
 ### Boolean functions
 
 ```bash
@@ -264,8 +260,7 @@ number()
 boolean()
 ```
 
-XPath Axes {.cols-2}
-----
+## XPath Axes {.cols-2}
 
 ### Using axes
 
@@ -276,14 +271,18 @@ XPath Axes {.cols-2}
 //ul/descendant-or-self::li   # ul li
 //ul/ancestor-or-self::li     # $('ul').closest('li')
 ```
-----
+
+---
+
 |      |      |            |      |
-|------|------|------------|------|
+| ---- | ---- | ---------- | ---- |
 | `//` | `ul` | `/child::` | `li` |
 | Axis | Step | Axis       | Step |
+
 {.left-text}
 
-Steps of an expression are separated by `/`, usually used to pick child nodes. That's not always true: you can specify a different "axis" with `::`.
+Steps of an expression are separated by `/`, usually used to pick child nodes. That's not always true: you can specify a
+different "axis" with `::`.
 
 ### Child axis
 
@@ -297,7 +296,7 @@ Steps of an expression are separated by `/`, usually used to pick child nodes. T
 
 ```bash
 # both the same
-# this works because `child::li` is truthy 
+# this works because `child::li` is truthy
 //ul[li]
 //ul[child::li]
 ```
@@ -326,24 +325,22 @@ Steps of an expression are separated by `/`, usually used to pick child nodes. T
 
 ### Other axes {.row-span-2}
 
-| Axis               | Abbrev | Notes |
-|--------------------|--------|-------|
-| `ancestor`         |        |       |
-| `ancestor-or-self` |        |       |
-
+| Axis                 | Abbrev | Notes                                            |
+| -------------------- | ------ | ------------------------------------------------ |
+| `ancestor`           |        |                                                  |
+| `ancestor-or-self`   |        |                                                  |
 | `attribute`          | `@`    | `@href` is short for `attribute::href`           |
 | `child`              |        | `div` is short for `child::div`                  |
 | `descendant`         |        |                                                  |
 | `descendant-or-self` | `//`   | `//` is short for `/descendant-or-self::node()/` |
 | `namespace`          |        |                                                  |
-
 | `self`               | `.`    | `.` is short for `self::node()`                  |
 | `parent`             | `..`   | `..` is short for `parent::node()`               |
-
 | `following`          |        |                                                  |
 | `following-sibling`  |        |                                                  |
 | `preceding`          |        |                                                  |
 | `preceding-sibling`  |        |                                                  |
+
 {.headers}
 
 There are other axes you can use.
@@ -356,8 +353,7 @@ There are other axes you can use.
 
 Use `|` to join two expressions.
 
-XPath More examples {.cols-2}
--------------
+## XPath More examples {.cols-2}
 
 ### Examples
 
@@ -375,14 +371,14 @@ count(//*)          # count all elements
 ```bash
 //section[h1[@id='section-name']]
 ```
+
 Finds a `<section>` that directly contains `h1#section-name`
 
 ```bash
 //section[//h1[@id='section-name']]
 ```
 
-Finds a `<section>` that contains `h1#section-name`.
-(Same as above, but uses descendant-or-self instead of child)
+Finds a `<section>` that contains `h1#section-name`. (Same as above, but uses descendant-or-self instead of child)
 
 ### Closest
 
@@ -400,11 +396,7 @@ Works like jQuery's `$().closest('.box')`.
 
 Finds `<item>` and check its attributes
 
-Also see
---------
-* [Devhints](https://devhints.io/xpath) _(devhints.io)_
-* [Xpath test bed](http://www.whitebeam.org/library/guide/TechNotes/xpathtestbed.rhtm) _(whitebeam.org)_
+## Also see
 
-
-
-
+- [Devhints](https://devhints.io/xpath) _(devhints.io)_
+- [Xpath test bed](http://www.whitebeam.org/library/guide/TechNotes/xpathtestbed.rhtm) _(whitebeam.org)_

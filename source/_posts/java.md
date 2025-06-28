@@ -3,14 +3,15 @@ title: Java
 date: 2021-03-10 19:50:01
 background: bg-[#d33731]
 tags:
-    - object-oriented
-    - class
+  - object-oriented
+  - class
 categories:
-    - Programming
+  - Programming
 intro: |
     快速查阅 JavaSE 语法
 plugins:
-    - tooltip
+  - tooltip
+  - copyCode
 ---
 
 
@@ -48,6 +49,7 @@ $su -c "yum install java-1.8.0-openjdk"
 --------
 
 ### Hello.java {.row-span-2}
+
 ```java
 public class Hello {
   // Java main 方法，作为程序的入口
@@ -84,7 +86,7 @@ int num = 5;
 float floatNum = 5.99f;
 char letter = 'D';
 boolean bool = true;
-String site = "quickref.me";
+String site = "cheatsheets.zip";
 ```
 
 ### 字符串
@@ -94,6 +96,7 @@ String last = "Doe";
 String name = first + " " + last;
 System.out.println(name);
 ```
+
 See: [Strings](#java-strings)
 
 
@@ -101,12 +104,13 @@ See: [Strings](#java-strings)
 
 ### 循环
 ```java
-String word = "QuickRef";
+String word = "CheatSheets";
 for (char c: word.toCharArray()) {
   System.out.print(c + "-");
 }
-// Outputs: Q-u-i-c-k-R-e-f-
+// Outputs: C-h-e-a-t-S-h-e-e-t-s-
 ```
+
 See: [Loops](#java-loops)
 
 
@@ -120,6 +124,7 @@ String[] letters = {"A", "B", "C"};
 int[] mylist = {100, 200};
 boolean[] answers = {true, false};
 ```
+
 See: [Arrays](#java-arrays)
 
 ### 类型转换
@@ -154,6 +159,7 @@ if (j == 10) {
   System.out.println("I also don't");
 }
 ```
+
 See: [Conditionals](#java-conditionals)
 
 ### 控制台输入/输出 {.row-span-1 .col-span-1}
@@ -394,53 +400,62 @@ Java 字符串
 ### Basic
 
 ```java
-String str1 = "value"; 
+String str1 = "value";
 String str2 = new String("value");
 String str3 = String.valueOf(123);
 ```
 
-
 ### Concatenation
+
 ```java
 String s = 3 + "str" + 3;     // 3str3
 String s = 3 + 3 + "str";     // 6str
 String s = "3" + 3 + "str";   // 33str
 String s = "3" + "3" + "23";  // 3323
 String s = "" + 3 + 3 + "23"; // 3323
-String s = 3 + 3 + 23;        // 29
+String s = 3 + 3 + 23;        // Incompatible types
 ```
 
-
 ### StringBuilder {.row-span-3}
-StringBuilder sb = new StringBuilder(10);
+
+`StringBuilder sb = new StringBuilder(10);`
+
 ```java
 ┌───┬───┬───┬───┬───┬───┬───┬───┬───┐
 |   |   |   |   |   |   |   |   |   |
 └───┴───┴───┴───┴───┴───┴───┴───┴───┘
 0   1   2   3   4   5   6   7   8   9
 ```
-sb.append("QuickRef");
+
+`sb.append("QuickRef");`
+
 ```java
 ┌───┬───┬───┬───┬───┬───┬───┬───┬───┐
 | Q | u | i | c | k | R | e | f |   |
 └───┴───┴───┴───┴───┴───┴───┴───┴───┘
 0   1   2   3   4   5   6   7   8   9
 ```
-sb.delete(5, 9);
+
+`sb.delete(5, 9);`
+
 ```java
 ┌───┬───┬───┬───┬───┬───┬───┬───┬───┐
 | Q | u | i | c | k |   |   |   |   |
 └───┴───┴───┴───┴───┴───┴───┴───┴───┘
 0   1   2   3   4   5   6   7   8   9
 ```
-sb.insert(0, "My ");
+
+`sb.insert(0, "My ");`
+
 ```java
 ┌───┬───┬───┬───┬───┬───┬───┬───┬───┐
 | M | y |   | Q | u | i | c | k |   |
 └───┴───┴───┴───┴───┴───┴───┴───┴───┘
 0   1   2   3   4   5   6   7   8   9
 ```
-sb.append("!");
+
+`sb.append("!");`
+
 ```java
 ┌───┬───┬───┬───┬───┬───┬───┬───┬───┐
 | M | y |   | Q | u | i | c | k | ! |
@@ -448,11 +463,11 @@ sb.append("!");
 0   1   2   3   4   5   6   7   8   9
 ```
 
-
 ### Comparison
+
 ```java
-String s1 = new String("QuickRef"); 
-String s2 = new String("QuickRef"); 
+String s1 = new String("cheatsheets.zip");
+String s2 = new String("cheatsheets.zip");
 
 s1 == s2          // false
 s1.equals(s2)     // true
@@ -460,8 +475,8 @@ s1.equals(s2)     // true
 "AB".equalsIgnoreCase("ab")  // true
 ```
 
-
 ### Manipulation
+
 ```java
 String str = "Abcd";
 
@@ -474,8 +489,8 @@ str.replace("b", "-"); // A-cd
 "ab".toCharArray();    // {'a', 'b'}
 ```
 
-
 ### Information
+
 ```java
 String str = "abcd";
 
@@ -492,9 +507,8 @@ str.startsWith("a"); // true
 str.isEmpty();       // false
 ```
 
-
-
 ### Immutable
+
 ```java
 String str = "hello";
 str.concat("world");
@@ -523,6 +537,7 @@ Java 数组
 
 
 ### Declare
+
 ```java
 int[] a1;
 int[] a2 = {1, 2, 3};
@@ -534,8 +549,8 @@ a4[2] = 2;
 a4[3] = 3;
 ```
 
-
 ### Modify
+
 ```java
 int[] a = {1, 2, 3};
 System.out.println(a[0]); // 1
@@ -546,8 +561,8 @@ System.out.println(a[0]); // 9
 System.out.println(a.length); // 3
 ```
 
-
 ### Loop (Read & Modify)
+
 ```java
 int[] arr = {1, 2, 3};
 for (int i=0; i < arr.length; i++) {
@@ -557,35 +572,36 @@ for (int i=0; i < arr.length; i++) {
 // Outputs: 2 4 6
 ```
 
-
 ### Loop (Read)
+
 ```java
 String[] arr = {"a", "b", "c"};
-for (int a: arr) {
+for (String a: arr) {
     System.out.print(a + " ");
 }
-// Outputs: a b c 
+// Outputs: a b c
 ```
 
-
 ### Multidimensional Arrays
+
 ```java
 int[][] matrix = { {1, 2, 3}, {4, 5} };
 
 int x = matrix[1][0];  // 4
 // [[1, 2, 3], [4, 5]]
-Arrays.deepToString(matrix)
+Arrays.deepToString(matrix);
 
+int[][] a = matrix;
 for (int i = 0; i < a.length; ++i) {
   for(int j = 0; j < a[i].length; ++j) {
     System.out.println(a[i][j]);
   }
 }
-// Outputs: 1 2 3 4 5 6 7 
+// Outputs: 1 2 3 4 5 6 7
 ```
 
-
 ### Sort
+
 ```java
 char[] chars = {'b', 'a', 'c'};
 Arrays.sort(chars);
@@ -602,6 +618,7 @@ Arrays.toString(chars);
 
 
 ### If else
+
 ```java
 int k = 15;
 if (k > 20) {
@@ -614,6 +631,7 @@ if (k > 20) {
 ```
 
 ### Switch {.row-span-2}
+
 ```java
 int month = 3;
 String str;
@@ -675,6 +693,7 @@ for (int number: numbers) {
 }
 // Outputs: 12345
 ```
+
 Used to loop around array's or List's
 
 
@@ -708,7 +727,7 @@ for (int i = 0; i < 5; i++) {
   }
   System.out.print(i);
 }
-// Outputs: 01245
+// Outputs: 0124
 ```
 
 ### 带标签的 Continue 语句
@@ -1084,7 +1103,7 @@ Java Collections Framework
 ### Java Collections {.col-span-2}
 
 | Collection                                                                                                         | Interface   | Ordered | Sorted | Thread safe | Duplicate | Nullable           |
-|--------------------------------------------------------------------------------------------------------------------|-------------|---------|--------|-------------|-----------|--------------------|
+| ------------------------------------------------------------------------------------------------------------------ | ----------- | ------- | ------ | ----------- | --------- | ------------------ |
 | [ArrayList](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html)                                    | List        | Y       | _N_    | _N_         | Y         | Y                  |
 | [Vector](https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html)                                          | List        | Y       | _N_    | Y           | Y         | Y                  |
 | [LinkedList](https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html)                                  | List, Deque | Y       | _N_    | _N_         | Y         | Y                  |
@@ -1107,10 +1126,11 @@ Java Collections Framework
 | [ArrayBlockingQueue](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ArrayBlockingQueue.html)       | Queue       | Y       | _N_    | Y           | Y         | _N_                |
 | [LinkedBlockingDeque](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/LinkedBlockingDeque.html)     | Deque       | Y       | _N_    | Y           | Y         | _N_                |
 | [PriorityBlockingQueue](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/PriorityBlockingQueue.html) | Queue       | Y       | _N_    | Y           | Y         | _N_                |
+
 {.show-header .left-text}
 
-
 ### ArrayList
+
 ```java
 List<Integer> nums = new ArrayList<>();
 
@@ -1136,6 +1156,7 @@ for (Integer value : nums) {
 ```
 
 ### HashMap
+
 ```java
 Map<Integer, String> m = new HashMap<>();
 m.put(5, "Five");
@@ -1155,6 +1176,7 @@ m.forEach((key, value) -> {
 ```
 
 ### HashSet
+
 ```java
 Set<String> set = new HashSet<>();
 if (set.isEmpty()) {
@@ -1178,6 +1200,7 @@ for (String element : set) {
 ```
 
 ### ArrayDeque
+
 ```java
 Deque<String> a = new ArrayDeque<>();
 
@@ -1200,21 +1223,21 @@ System.out.println(a.peek());
 System.out.println(a.pop());
 ```
 
-Misc
-----
-
+## Misc
 
 ### Access Modifiers {.col-span-2}
+
 | Modifier    | Class | Package | Subclass | World |
-|-------------|-------|---------|----------|-------|
+| ----------- | ----- | ------- | -------- | ----- |
 | public      | Y     | Y       | Y        | Y     |
 | protected   | Y     | Y       | Y        | _N_   |
 | no modifier | Y     | Y       | _N_      | _N_   |
 | private     | Y     | _N_     | _N_      | _N_   |
+
 {.show-header .left-text}
 
-
 ### Regular expressions
+
 ```java
 String text = "I am learning Java";
 // Removing All Whitespace
@@ -1224,16 +1247,70 @@ text.replaceAll("\\s+", "");
 text.split("\\|");
 text.split(Pattern.quote("|"));
 ```
+
 See: [Regex in java](/regex#regex-in-java)
 
 
 
 
 
-### Math methods 
+- `abstract`
+- `continue`
+- `for`
+- `new`
+- `switch`
+- `assert`
+- `default`
+- `goto`
+- `package`
+- `synchronized`
+- `boolean`
+- `do`
+- `if`
+- `private`
+- `this`
+- `break`
+- `double`
+- `implements`
+- `protected`
+- `throw`
+- `byte`
+- `else`
+- `import`
+- `public`
+- `throws`
+- `case`
+- `enum`
+- `instanceof`
+- `return`
+- `transient`
+- `catch`
+- `extends`
+- `int`
+- `short`
+- `try`
+- `char`
+- `final`
+- `interface`
+- `static`
+- `void`
+- `class`
+- `finally`
+- `long`
+- `strictfp`
+- `volatile`
+- `const`
+- `float`
+- `native`
+- `super`
+- `while`
+
+{.marker-none .cols-6}
+
+### Math methods
 
 | Method                | Description            |
-|-----------------------|------------------------|
+| --------------------- | :--------------------- |
 | `Math.max(a,b)`       | Maximum of a and b     |
 | `Math.min(a,b)`       | Minimum of a and b     |
 | `Math.abs(a)`         | Absolute value a       |
@@ -1249,6 +1326,7 @@ See: [Regex in java](/regex#regex-in-java)
 | `Math.toRadians(deg)` | Angle deg in radians   |
 
 ### Try/Catch/Finally
+
 ```java
 try {
   // something

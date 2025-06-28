@@ -3,26 +3,25 @@ title: Python
 date: 2020-12-23 18:41:20
 background: bg-[#436b97]
 tags:
-    - script
-    - interpret
+  - script
+  - interpret
 categories:
-    - Programming
+  - Programming
 intro: |
-    The [Python](https://www.python.org/) cheat sheet is a one-page reference sheet for the Python 3 programming language.
+  The [Python](https://www.python.org/) cheat sheet is a one-page reference sheet for the Python 3 programming language.
+plugins:
+  - copyCode
+  - runCode
 ---
 
-
-
-Getting Started
----------------
-
+## Getting Started
 
 ### Introduction
-- [Python](https://www.python.org/)  _(python.org)_
+
+- [Python](https://www.python.org/) _(python.org)_
+- [Python Document](https://docs.python.org/3/index.html) _(docs.python.org)_
 - [Learn X in Y minutes](https://learnxinyminutes.com/docs/python/) _(learnxinyminutes.com)_
-- [Regex in python](/regex#regex-in-python) _(quickref.me)_
-
-
+- [Regex in python](/regex#regex-in-python) _(cheatsheets.zip)_
 
 ### Hello World
 
@@ -33,8 +32,8 @@ Hello, World!
 
 The famous "Hello World" program in Python
 
-
 ### Variables
+
 ```python
 age = 18      # age is of type int
 name = "John" # name is now of type str
@@ -43,11 +42,10 @@ print(name)
 
 Python can't declare a variable without assignment.
 
-
-
 ### Data Types {.row-span-2}
+
 |                                    |          |
-|------------------------------------|----------|
+| ---------------------------------- | -------- |
 | `str`                              | Text     |
 | `int`, `float`, `complex`          | Numeric  |
 | `list`, `tuple`, `range`           | Sequence |
@@ -55,8 +53,8 @@ Python can't declare a variable without assignment.
 | `set`, `frozenset`                 | Set      |
 | `bool`                             | Boolean  |
 | `bytes`, `bytearray`, `memoryview` | Binary   |
-See: [Data Types](#python-data-types)
 
+See: [Data Types](#python-built-in-data-types)
 
 ### Slicing String
 
@@ -69,6 +67,7 @@ llo
 See: [Strings](#python-strings)
 
 ### Lists
+
 ```python
 mylist = []
 mylist.append(1)
@@ -79,8 +78,8 @@ for item in mylist:
 
 See: [Lists](#python-lists)
 
+### If Else
 
-### If Else                                        
 ```python
 num = 200
 if num > 0:
@@ -88,9 +87,11 @@ if num > 0:
 else:
     print("num is not greater than 0")
 ```
+
 See: [Flow control](#python-flow-control)
 
 ### Loops
+
 ```python
 for item in range(6):
     if item == 3: break
@@ -98,10 +99,11 @@ for item in range(6):
 else:
     print("Finally finished!")
 ```
+
 See: [Loops](#python-loops)
 
-
 ### Functions
+
 ```python
 >>> def my_function():
 ...     print("Hello from a function")
@@ -112,8 +114,8 @@ Hello from a function
 
 See: [Functions](#python-functions)
 
-
 ### File Handling {.col-span-2}
+
 ```python
 with open("myfile.txt", "r", encoding='utf8') as file:
     for line in file:
@@ -122,9 +124,8 @@ with open("myfile.txt", "r", encoding='utf8') as file:
 
 See: [File Handling](#python-file-handling)
 
-
-
 ### Arithmetic
+
 ```python
 result = 10 + 30 # => 40
 result = 40 - 10 # => 30
@@ -133,10 +134,13 @@ result = 16 / 4  # => 4.0 (Float Division)
 result = 16 // 4 # => 4 (Integer Division)
 result = 25 % 2  # => 1
 result = 5 ** 3  # => 125
-``` 
-The `/` means quotient of x and y, and the `//` means floored quotient of x and y, also see [StackOverflow](https://stackoverflow.com/a/183870/13192320)
+```
+
+The `/` means quotient of x and y, and the `//` means floored quotient of x and y, also see
+[StackOverflow](https://stackoverflow.com/a/183870/13192320)
 
 ### Plus-Equals
+
 ```python
 counter = 0
 counter += 10           # => 10
@@ -146,27 +150,24 @@ counter = counter + 10  # => 10
 message = "Part 1."
 
 # => Part 1.Part 2.
-message += "Part 2."   
+message += "Part 2."
 ```
 
 ### f-Strings (Python 3.6+)
+
 ```python
->>> website = 'Quickref.ME'
+>>> website = 'cheatsheets.zip'
 >>> f"Hello, {website}"
-"Hello, Quickref.ME"
+"Hello, cheatsheets.zip"
 
 >>> num = 10
 >>> f'{num} + 10 = {num + 10}'
 '10 + 10 = 20'
 ```
+
 See: [Python F-Strings](#python-f-strings-since-python-3-6)
 
-
-
-Python Built-in Data Types
----------------
-
-
+## Python Built-in Data Types
 
 ### Strings
 
@@ -178,11 +179,11 @@ multi_string = """Multiline Strings
 Lorem ipsum dolor sit amet,
 consectetur adipiscing elit """
 ```
+
 See: [Strings](#python-strings)
 
-
-
 ### Numbers
+
 ```python
 x = 1    # int
 y = 2.8  # float
@@ -192,47 +193,71 @@ z = 1j   # complex
 <class 'int'>
 ```
 
-
-
 ### Booleans
+
 ```python
-my_bool = True 
+my_bool = True
 my_bool = False
 
 bool(0)     # => False
 bool(1)     # => True
 ```
 
-
-
 ### Lists
+
 ```python
 list1 = ["apple", "banana", "cherry"]
 list2 = [True, False, False]
 list3 = [1, 5, 7, 9, 3]
 list4 = list((1, 5, 7, 9, 3))
 ```
+
 See: [Lists](#python-lists)
 
-
 ### Tuple
+
 ```python
 my_tuple = (1, 2, 3)
 my_tuple = tuple((1, 2, 3))
-```
-Similar to List but immutable 
 
+tupla = (1, 2, 3, 'python')
+
+print(tupla[0])       # Output: 1
+print(tupla.count(1)) # Count occurrences
+print(tupla.index(2)) # Find index
+
+tupla1 = (1, 2, 3)
+tupla2 = ('a', 'b')
+
+len(tuple) → Returns the number of elements.
+in → Checks if an element exists in the tuple.
+Concatenation (+) → Combines two tuples.
+Repetition (*) → Repeats a tuple.
+Slicing (tuple[start:end]) → Extracts a subtuple.
+
+print(len(tupla1))       # Output: 3
+print(2 in tupla1)       # Output: True
+print(tupla1 + tupla2)   # Output: (1, 2, 3, 'a', 'b')
+print(tupla1[1:])        # Output: (2, 3)
+
+# unpacking
+a, b, c, d = tupla   # Each value goes into a variable
+
+```
+
+Similar to List but immutable
 
 ### Set
+
 ```python
-set1 = {"a", "b", "c"}   
+set1 = {"a", "b", "c"}
 set2 = set(("a", "b", "c"))
 ```
+
 Set of unique items/objects
 
-
-
 ### Dictionary
+
 ```python {.wrap}
 >>> empty_dict = {}
 >>> a = {"one": 1, "two": 2, "three": 3}
@@ -248,12 +273,13 @@ dict_keys(['one', 'two', 'three', 'four'])
 >>> a['four']
 4
 ```
-Key: Value pair, JSON like object
 
+Key: Value pair, JSON like object
 
 ### Casting
 
 #### Integers
+
 ```python
 x = int(1)   # x will be 1
 y = int(2.8) # y will be 2
@@ -261,6 +287,7 @@ z = int("3") # z will be 3
 ```
 
 #### Floats
+
 ```python
 x = float(1)     # x will be 1.0
 y = float(2.8)   # y will be 2.8
@@ -269,15 +296,17 @@ w = float("4.2") # w will be 4.2
 ```
 
 #### Strings
+
 ```python
 x = str("s1") # x will be 's1'
 y = str(2)    # y will be '2'
 z = str(3.0)  # z will be '3.0'
 ```
 
-Python Advanced Data Types
------------------------
+## Python Advanced Data Types
+
 ### Heaps {.col-span-2 .row-span-3}
+
 ```python
 import heapq
 
@@ -290,7 +319,9 @@ heapq.heappush(myList, 10) # insert 10
 x = heapq.heappop(myList)  # pop and return smallest item
 print(x)                   # => 1
 ```
-#### Negate all values to use Min Heap as Max Heap 
+
+#### Negate all values to use Min Heap as Max Heap
+
 ```python
 myList = [9, 5, 4, 1, 3, 2]
 myList = [-val for val in myList] # multiply by -1 to negate
@@ -299,9 +330,13 @@ heapq.heapify(myList)
 x = heapq.heappop(myList)
 print(-x) # => 9 (making sure to multiply by -1 again)
 ```
-Heaps are binary trees for which every parent node has a value less than or equal to any of its children. Useful for accessing min/max value quickly. Time complexity: O(n) for heapify, O(log n) push and pop. See: [Heapq](https://docs.python.org/3/library/heapq.html)
+
+Heaps are binary trees for which every parent node has a value less than or equal to any of its children. Useful for
+accessing min/max value quickly. Time complexity: O(n) for heapify, O(log n) push and pop. See:
+[Heapq](https://docs.python.org/3/library/heapq.html)
 
 ### Stacks and Queues {.row-span-3}
+
 ```python
 from collections import deque
 
@@ -321,12 +356,11 @@ print(q)    # => deque([1, 2, 3])
 q.rotate(1) # rotate 1 step to the right
 print(q)    # => deque([3, 1, 2])
 ```
-Deque is a double-ended queue with O(1) time for append/pop operations from both sides. Used as stacks and queues. See: [Deque](https://docs.python.org/3/library/collections.html#collections.deque)
 
+Deque is a double-ended queue with O(1) time for append/pop operations from both sides. Used as stacks and queues. See:
+[Deque](https://docs.python.org/3/library/collections.html#collections.deque)
 
-
-Python Strings
-------------
+## Python Strings
 
 ### Array-like
 
@@ -337,6 +371,7 @@ e
 >>> print(hello[-1])
 d
 ```
+
 Get the character at position 1 or last
 
 ### Looping
@@ -348,11 +383,11 @@ f
 o
 o
 ```
+
 Loop through the letters in the word "foo"
 
-
-
 ### Slicing string {.row-span-4}
+
 ```java
  ┌───┬───┬───┬───┬───┬───┬───┐
  | m | y | b | a | c | o | n |
@@ -371,7 +406,6 @@ Loop through the letters in the word "foo"
 'my'
 ```
 
-
 ```python
 >>> s = 'mybacon'
 >>> s[:2]
@@ -384,7 +418,6 @@ Loop through the letters in the word "foo"
 'mybacon'
 ```
 
-
 ```python
 >>> s = 'mybacon'
 >>> s[-5:-1]
@@ -393,8 +426,8 @@ Loop through the letters in the word "foo"
 'baco'
 ```
 
-
 #### With a stride
+
 ```python
 >>> s = '12345' * 5
 >>> s
@@ -409,22 +442,18 @@ Loop through the letters in the word "foo"
 '5432154321543215432154321'
 ```
 
-
-
-
-
 ### String Length
-
 
 ```python
 >>> hello = "Hello, World!"
 >>> print(len(hello))
 13
 ```
+
 The len() function returns the length of a string
 
-
 ### Multiple copies
+
 ```python
 >>> s = '===+'
 >>> n = 8
@@ -444,6 +473,7 @@ True
 ```
 
 ### Concatenates
+
 ```python
 >>> s = 'spam'
 >>> t = 'egg'
@@ -453,8 +483,8 @@ True
 'spamegg'
 ```
 
+### Formatting {.col-span-2}
 
-### Formatting  {.col-span-2}
 ```python
 name = "John"
 print("Hello, %s!" % name)
@@ -467,6 +497,7 @@ print("%s is %d years old." % (name, age))
 ```
 
 #### format() Method
+
 ```python
 txt1 = "My name is {fname}, I'm {age}".format(fname="John", age=36)
 txt2 = "My name is {0}, I'm {1}".format("John", 36)
@@ -474,36 +505,38 @@ txt3 = "My name is {}, I'm {}".format("John", 36)
 ```
 
 ### Input
+
 ```python
 >>> name = input("Enter your name: ")
 Enter your name: Tom
 >>> name
 'Tom'
 ```
+
 Get input data from console
 
-
 ### Join
+
 ```python
 >>> "#".join(["John", "Peter", "Vicky"])
 'John#Peter#Vicky'
 ```
 
 ### Endswith
+
 ```python
 >>> "Hello, world!".endswith("!")
 True
 ```
 
-Python F-Strings (Since Python 3.6+)
-----------------
-
+## Python F-Strings (Since Python 3.6+)
 
 ### f-Strings usage
+
 ```python
->>> website = 'Quickref.ME'
+>>> website = 'cheatsheets.zip'
 >>> f"Hello, {website}"
-"Hello, Quickref.ME"
+"Hello, cheatsheets.zip"
 
 >>> num = 10
 >>> f'{num} + 10 = {num + 10}'
@@ -524,11 +557,12 @@ Python F-Strings (Since Python 3.6+)
 ...     I'm {age}."""
 "Hello!\n    I'm Eric.\n    I'm 27."
 ```
-it is available since Python 3.6, also see: [Formatted string literals](https://docs.python.org/3/reference/lexical_analysis.html#f-strings)
 
-
+it is available since Python 3.6, also see:
+[Formatted string literals](https://docs.python.org/3/reference/lexical_analysis.html#f-strings)
 
 ### f-Strings Fill Align
+
 ```python
 >>> f'{"text":10}'     # [width]
 'text      '
@@ -542,8 +576,8 @@ it is available since Python 3.6, also see: [Formatted string literals](https://
 '0000012345'
 ```
 
-
 ### f-Strings Type
+
 ```python
 >>> f'{10:b}'        # binary type
 '1010'
@@ -565,8 +599,8 @@ it is available since Python 3.6, also see: [Formatted string literals](https://
 '0xa'
 ```
 
-
 ### F-Strings Others
+
 ```python
 >>> f'{-12345:0=10}'  # negative numbers
 '-000012345'
@@ -589,8 +623,8 @@ it is available since Python 3.6, also see: [Formatted string literals](https://
 '25%'
 ```
 
-
 ### F-Strings Sign
+
 ```python
 >>> f'{12345:+}'      # [sign] (+/-)
 '+12345'
@@ -602,12 +636,10 @@ it is available since Python 3.6, also see: [Formatted string literals](https://
 '-000012345'
 ```
 
-Python Lists
-------------
-
-
+## Python Lists
 
 ### Defining
+
 ```python
 >>> li1 = []
 >>> li1
@@ -623,9 +655,8 @@ Python Lists
 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
 
-
-
 ### Generate {.col-span-2}
+
 ```python
 >>> list(filter(lambda x : x % 2 == 1, range(1, 20)))
 [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
@@ -640,8 +671,8 @@ Python Lists
 [6, 7]
 ```
 
-
 ### Append
+
 ```python
 >>> li = []
 >>> li.append(1)
@@ -658,14 +689,17 @@ Python Lists
 [1, 2, 4, 3]
 ```
 
-
 ### List Slicing {.col-span-2 .row-span-3}
+
 Syntax of list slicing:
+
 ```python
 a_list[start:end]
 a_list[start:end:step]
 ```
+
 #### Slicing
+
 ```python
 >>> a = ['spam', 'egg', 'bacon', 'tomato', 'ham', 'lobster']
 >>> a[2:5]
@@ -675,7 +709,9 @@ a_list[start:end:step]
 >>> a[1:4]
 ['egg', 'bacon', 'tomato']
 ```
+
 #### Omitting index
+
 ```python
 >>> a[:4]
 ['spam', 'egg', 'bacon', 'tomato']
@@ -690,7 +726,9 @@ a_list[start:end:step]
 >>> a[:]
 ['spam', 'egg', 'bacon', 'tomato', 'ham', 'lobster']
 ```
+
 #### With a stride
+
 ```python
 ['spam', 'egg', 'bacon', 'tomato', 'ham', 'lobster']
 >>> a[0:6:2]
@@ -705,10 +743,8 @@ a_list[start:end:step]
 ['lobster', 'ham', 'tomato', 'bacon', 'egg', 'spam']
 ```
 
-
-
-
 ### Remove
+
 ```python
 >>> li = ['bread', 'butter', 'milk']
 >>> li.pop()
@@ -720,11 +756,8 @@ a_list[start:end:step]
 ['butter']
 ```
 
-
-
-
-
 ### Access
+
 ```python
 >>> li = ['a', 'b', 'c', 'd']
 >>> li[0]
@@ -737,8 +770,8 @@ Traceback (most recent call last):
 IndexError: list index out of range
 ```
 
+### Concatenating {.row-span-2}
 
-### Concatenating  {.row-span-2}
 ```python
 >>> odd = [1, 3, 5]
 >>> odd.extend([9, 11, 13])
@@ -749,8 +782,8 @@ IndexError: list index out of range
 [1, 3, 5, 9, 11, 13]
 ```
 
-
 ### Sort & Reverse {.row-span-2}
+
 ```python
 >>> li = [3, 1, 3, 2, 5]
 >>> li.sort()
@@ -761,26 +794,26 @@ IndexError: list index out of range
 [5, 3, 3, 2, 1]
 ```
 
-
 ### Count
+
 ```python
 >>> li = [3, 1, 3, 2, 5]
 >>> li.count(3)
 2
 ```
 
-
 ### Repeating
+
 ```python
 >>> li = ["re"] * 3
 >>> li
 ['re', 're', 're']
 ```
 
-Python Flow control
-------------
+## Python Flow control
 
 ### Basic
+
 ```python
 num = 5
 if num > 10:
@@ -791,7 +824,8 @@ else:
     print("num is indeed 10.")
 ```
 
-### One line
+### One line (ternary operator)
+
 ```python
 >>> a = 330
 >>> b = 200
@@ -812,11 +846,20 @@ else:
     print("Value is True")
 ```
 
+### match case
 
+```python
+x = 1
+match x:
+  case 0:
+    print("zero")
+  case 1:
+    print("one")
+  case _:
+    print("multiple")
+```
 
-
-Python Loops
---------
+## Python Loops
 
 ### Basic
 
@@ -825,10 +868,8 @@ primes = [2, 3, 5, 7]
 for prime in primes:
     print(prime)
 ```
+
 Prints: 2 3 5 7
-
-
-
 
 ### With index
 
@@ -838,23 +879,22 @@ animals = ["dog", "cat", "mouse"]
 for i, value in enumerate(animals):
     print(i, value)
 ```
+
 Prints: 0 dog 1 cat 2 mouse
 
-
-
 ### While
+
 ```python
 x = 0
 while x < 4:
     print(x)
     x += 1  # Shorthand for x = x + 1
 ```
+
 Prints: 0 1 2 3
 
-
-
-
 ### Break
+
 ```python
 x = 0
 for index in range(10):
@@ -863,24 +903,23 @@ for index in range(10):
     	break
     print(x)
 ```
+
 Prints: 0 10 20 30 40
-
-
 
 ### Continue
 
 ```python
-for index in range(3, 8): 
+for index in range(3, 8):
     x = index * 10
     if index == 5:
     	continue
     print(x)
 ```
+
 Prints: 30 40 60 70
 
-
-
 ### Range
+
 ```python
 for i in range(4):
     print(i) # Prints: 0 1 2 3
@@ -892,9 +931,8 @@ for i in range(4, 10, 2):
     print(i) # Prints: 4 6 8
 ```
 
-
-
 ### With zip()
+
 ```python
 words = ['Mon', 'Tue', 'Wed']
 nums = [1, 2, 3]
@@ -902,11 +940,11 @@ nums = [1, 2, 3]
 for w, n in zip(words, nums):
     print('%d:%s, ' %(n, w))
 ```
+
 Prints: 1:Mon, 2:Tue, 3:Wed,
 
-
-
 ### for/else
+
 ```python
 nums = [60, 70, 30, 110, 90]
 for n in nums:
@@ -916,22 +954,91 @@ for n in nums:
 else:
     print("Not found!")
 ```
+
 Also see: [Python Tips](https://book.pythontips.com/en/latest/for_-_else.html)
 
+### Over Dictionary
+
+```python
+johndict = {
+  "firstname": "John",
+  "lastname": "Doe",
+  "age": 30
+  }
+
+x = johndict.items()
+print(x)
+
+# Output: dict_items([('firstname', 'John'),
+#                     ('lastname', 'Doe'),
+#                     ('age', 30)])
+
+for key, value in johndict.items():
+	print(f"{key} : : {value}")
+
+# Output: firstname : : John
+# Output: lastname : : Doe
+# Output: age : : 30
+```
+
+## Python Comprehensions
+
+### Comprehension List {.col-span-2}
+
+```python
+languages = ["html", "go", "rust", "javascript", "python"]
+
+newlist = [x for x in languages if "l" not in x]
+# add language for language in languages if "l" not in language
+
+print(newlist) #Output : [ 'go', 'rust', 'javascript', 'python']
+
+# List comprehension avoid this :
+oldlist = []
+for x in languages:
+    if  "l" not in x:
+        oldlist.append(x)
+print(oldlist) #Output :  [ 'go', 'rust', 'javascript', 'python']
 
 
+```
 
-Python Functions
---------
+### Comprehension Dictionary {.col-span-2}
+
+```python
+languages = ["html", "go", "rust", "javascript", "python"]
+
+language_dict = {lang: ('l' not in lang) for lang in languages}
+# Key is the language & bool is Value (no offense for html..)
+
+print(language_dict)
+# Output: {'html': False, 'go': True, 'rust': True,
+#          'javascript': True, 'python': True}
+
+
+# Dictionary comprehension avoid this :
+
+language_dict2 = {}
+
+for e in languages:
+    if "l" not in e:
+        language_dict2[e] = True
+    else:
+        language_dict2[e] = False
+
+print(language_dict2)
+# Output: {'html': False, 'go': True, 'rust': True,
+#          'javascript': True, 'python': True}
+```
+
+## Python Functions
 
 ### Basic
 
 ```python
-def hello_world():  
+def hello_world():
     print('Hello, World!')
 ```
-
-
 
 ### Return
 
@@ -944,6 +1051,7 @@ add(5, 6)    # => 11
 ```
 
 ### Positional arguments
+
 ```python
 def varargs(*args):
     return args
@@ -951,7 +1059,10 @@ def varargs(*args):
 varargs(1, 2, 3)  # => (1, 2, 3)
 ```
 
+Type of "args" is tuple.
+
 ### Keyword arguments
+
 ```python
 def keyword_args(**kwargs):
     return kwargs
@@ -960,7 +1071,10 @@ def keyword_args(**kwargs):
 keyword_args(big="foot", loch="ness")
 ```
 
+Type of "kwargs" is dict.
+
 ### Returning multiple
+
 ```python
 def swap(x, y):
     return y, x
@@ -970,8 +1084,8 @@ y = 2
 x, y = swap(x, y)  # => x = 2, y = 1
 ```
 
-
 ### Default Value
+
 ```python
 def add(x, y=10):
     return x + y
@@ -981,6 +1095,7 @@ add(5, 20)  # => 25
 ```
 
 ### Anonymous functions
+
 ```python
 # => True
 (lambda x: x > 2)(3)
@@ -989,18 +1104,37 @@ add(5, 20)  # => 25
 (lambda x, y: x ** 2 + y ** 2)(2, 1)
 ```
 
+### @decorator {.col-span-2}
 
+```python
+# Modify or extend behavior of function or class method,
+# without changing their actual code.
 
-Python Modules
---------
+# Define decorator that will wrap function or method
+def handle_errors(func):
+    def wrapper(*args, **kwargs):
+        try:
+            return func(*args, **kwargs)
+        except Exception as e:
+            return print(f"Error :  {e}")
+    return wrapper
 
+# Decorate function or method
+@handle_errors
+def divide(a, b):
+    return a / b
+
+divide(10, 0) # Output : Error : division by zero
+```
+
+## Python Modules
 
 ### Import modules
+
 ```python
 import math
 print(math.sqrt(16))  # => 4.0
 ```
-
 
 ### From a module
 
@@ -1010,15 +1144,13 @@ print(ceil(3.7))   # => 4.0
 print(floor(3.7))  # => 3.0
 ```
 
-
 ### Import all
 
 ```python
 from math import *
 ```
 
-
-### Shorten module 
+### Shorten module
 
 ```python
 import math as m
@@ -1027,7 +1159,6 @@ import math as m
 math.sqrt(16) == m.sqrt(16)
 ```
 
-
 ### Functions and attributes
 
 ```python
@@ -1035,30 +1166,30 @@ import math
 dir(math)
 ```
 
-
-
-Python File Handling
-----------
-
+## Python File Handling
 
 ### Read file
+
 #### Line by line
+
 ```python
 with open("myfile.txt") as file:
     for line in file:
         print(line)
 ```
+
 #### With line number
+
 ```python
 file = open('myfile.txt', 'r')
 for i, line in enumerate(file, start=1):
     print("Number %s: %s" % (i, line))
 ```
 
-
 ### String
 
 #### Write a string
+
 ```python
 contents = {"aa": 12, "bb": 21}
 with open("myfile1.txt", "w+") as file:
@@ -1066,6 +1197,7 @@ with open("myfile1.txt", "w+") as file:
 ```
 
 #### Read a string
+
 ```python
 with open('myfile1.txt', "r+") as file:
     contents = file.read()
@@ -1075,6 +1207,7 @@ print(contents)
 ### Object
 
 #### Write an object
+
 ```python
 contents = {"aa": 12, "bb": 21}
 with open("myfile2.txt", "w+") as file:
@@ -1082,12 +1215,12 @@ with open("myfile2.txt", "w+") as file:
 ```
 
 #### Read an object
+
 ```python
 with open('myfile2.txt', "r+") as file:
     contents = json.load(file)
 print(contents)
 ```
-
 
 ### Delete a File
 
@@ -1095,8 +1228,6 @@ print(contents)
 import os
 os.remove("myfile.txt")
 ```
-
-
 
 ### Check and Delete
 
@@ -1108,7 +1239,6 @@ else:
     print("The file does not exist")
 ```
 
-
 ### Delete Folder
 
 ```python
@@ -1116,13 +1246,7 @@ import os
 os.rmdir("myfolder")
 ```
 
-
-
-
-
-Python Classes & Inheritance
---------
-
+## Python Classes & Inheritance
 
 ### Defining
 
@@ -1134,39 +1258,34 @@ class MyNewClass:
 my = MyNewClass()
 ```
 
-
-
 ### Constructors
 
 ```python
 class Animal:
     def __init__(self, voice):
         self.voice = voice
- 
+
 cat = Animal('Meow')
 print(cat.voice)    # => Meow
- 
-dog = Animal('Woof') 
+
+dog = Animal('Woof')
 print(dog.voice)    # => Woof
 ```
 
-
-
 ### Method
+
 ```python
 class Dog:
 
     # Method of the class
     def bark(self):
         print("Ham-Ham")
- 
+
 charlie = Dog()
 charlie.bark()   # => "Ham-Ham"
 ```
 
-
-
-### Class Variables  {.row-span-2}
+### Class Variables {.row-span-2}
 
 ```python
 class MyClass:
@@ -1176,12 +1295,10 @@ class MyClass:
 print(MyClass.class_variable)
 
 x = MyClass()
- 
+
 # => A class variable!
 print(x.class_variable)
 ```
-
-
 
 ### Super() Function {.row-span-2}
 
@@ -1189,14 +1306,15 @@ print(x.class_variable)
 class ParentClass:
     def print_test(self):
         print("Parent Method")
- 
+
 class ChildClass(ParentClass):
     def print_test(self):
         print("Child Method")
         # Calls the parent's print_test()
-        super().print_test() 
-```          
---- 
+        super().print_test()
+```
+
+---
 
 ```python
 >>> child_instance = ChildClass()
@@ -1205,31 +1323,26 @@ Child Method
 Parent Method
 ```
 
-
-
-
 ### repr() method
 
 ```python
 class Employee:
     def __init__(self, name):
         self.name = name
- 
+
     def __repr__(self):
         return self.name
- 
+
 john = Employee('John')
 print(john)  # => John
 ```
 
-
 ### User-defined exceptions
+
 ```python
 class CustomError(Exception):
     pass
 ```
-
-
 
 ### Polymorphism
 
@@ -1237,53 +1350,371 @@ class CustomError(Exception):
 class ParentClass:
     def print_self(self):
         print('A')
- 
+
 class ChildClass(ParentClass):
     def print_self(self):
         print('B')
- 
+
 obj_A = ParentClass()
 obj_B = ChildClass()
- 
+
 obj_A.print_self() # => A
 obj_B.print_self() # => B
 ```
 
-### Overriding 
+### Overriding
+
 ```python
 class ParentClass:
     def print_self(self):
         print("Parent")
- 
+
 class ChildClass(ParentClass):
     def print_self(self):
         print("Child")
- 
+
 child_instance = ChildClass()
 child_instance.print_self() # => Child
 ```
 
 ### Inheritance
+
 ```python
-class Animal: 
+class Animal:
     def __init__(self, name, legs):
         self.name = name
         self.legs = legs
-        
+
 class Dog(Animal):
     def sound(self):
         print("Woof!")
- 
+
 Yoki = Dog("Yoki", 4)
 print(Yoki.name) # => YOKI
 print(Yoki.legs) # => 4
 Yoki.sound()     # => Woof!
 ```
 
+### @staticmethod {.col-span-2}
+
+```python
+class MyClass:
+    @staticmethod
+    def greet(name):
+        return f"Hello, {name}!"
+
+# No instantiation nedded
+
+# Call via class
+print(MyClass.greet("Alice"))  # => Hello, Alice!
+
+# Can still call via instance
+obj = MyClass()
+print(obj.greet("Bob"))        # => Hello, Bob!
+```
+
+## Python Type Hints (Since Python 3.5)
+
+### Variable & Parameter
+
+```python
+string: str = "ha"
+times: int = 3
 
 
-Miscellaneous
-----------
+# wrong hit, but run correctly
+result: str = 1 + 2
+print(result)  # => 3
+
+
+def say(name: str, start: str = "Hi"):
+    return start + ", " + name
+
+print(say("Python"))  # => Hi, Python
+```
+
+### Built-in date type
+
+```python
+from typing import Dict, Tuple, List
+
+bill: Dict[str, float] = {
+    "apple": 3.14,
+    "watermelon": 15.92,
+    "pineapple": 6.53,
+}
+completed: Tuple[str] = ("DONE",)
+succeeded: Tuple[int, str] = (1, "SUCCESS")
+statuses: Tuple[str, ...] = (
+    "DONE", "SUCCESS", "FAILED", "ERROR",
+)
+codes: List[int] = (0, 1, -1, -2)
+```
+
+### Built-in date type (3.10+)
+
+```python
+bill: dict[str, float] = {
+    "apple": 3.14,
+    "watermelon": 15.92,
+    "pineapple": 6.53,
+}
+completed: tuple[str] = ("DONE",)
+succeeded: tuple[int, str] = (1, "SUCCESS")
+statuses: tuple[str, ...] = (
+    "DONE", "SUCCESS", "FAILED", "ERROR",
+)
+codes: list[int] = (0, 1, -1, -2)
+```
+
+### Positional argument
+
+```python
+def calc_summary(*args: int):
+    return sum(args)
+
+print(calc_summary(3, 1, 4))  # => 8
+```
+
+Indicate all arguments' type is int.
+
+### Returned
+
+```python
+def say_hello(name) -> str:
+    return "Hello, " + name
+
+var = "Python"
+print(say_hello(var))  # => Hello, Python
+```
+
+### Union returned
+
+```python
+from typing import Union
+
+def resp200(meaningful) -> Union[int, str]:
+    return "OK" if meaningful else 200
+```
+
+Means returned value type may be int or str.
+
+### Keyword argument
+
+```python
+def calc_summary(**kwargs: int):
+    return sum(kwargs.values())
+
+print(calc_summary(a=1, b=2))  # => 3
+```
+
+Indicate all parameters' value type is int.
+
+### Multiple returns
+
+```python
+def resp200() -> (int, str):
+    return 200, "OK"
+
+returns = resp200()
+print(returns)  # => (200, 'OK')
+print(type(returns))  # tuple
+```
+
+### Union returned (3.10+)
+
+```python
+def resp200(meaningful) -> int | str:
+    return "OK" if meaningful else 200
+```
+
+Since Python 3.10
+
+### Property
+
+```python
+class Employee:
+    name: str
+    age: int
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        self.graduated: bool = False
+```
+
+### Self instance
+
+```python
+class Employee:
+    name: str
+
+    def set_name(self, name) -> "Employee":
+        self.name = name
+        return self
+
+    def copy(self) -> 'Employee':
+        return type(self)(self.name)
+```
+
+### Self instance (3.11+)
+
+```python
+from typing import Self
+
+class Employee:
+    name: str
+    age: int
+
+    def set_name(self: Self, name) -> Self:
+        self.name = name
+        return self
+```
+
+### Type & Generic {.col-span-2}
+
+```python
+from typing import TypeVar, Type
+
+T = TypeVar("T")
+
+# "mapper" is a type, like int, str, MyClass and so on.
+# "default" is an instance of type T, such as 314, "string", MyClass() and so on.
+# returned is an instance of type T too.
+def converter(raw, mapper: Type[T], default: T) -> T:
+    try:
+        return mapper(raw)
+    except:
+        return default
+
+raw: str = input("Enter an integer: ")
+result: int = converter(raw, mapper=int, default=0)
+```
+
+### Function {.col-span-2}
+
+```python
+from typing import TypeVar, Callable, Any
+
+T = TypeVar("T")
+
+def converter(raw, mapper: Callable[[Any], T], default: T) -> T:
+    try:
+        return mapper(raw)
+    except:
+        return default
+
+# Callable[[Any], ReturnType] means a function declare like:
+# def func(arg: Any) -> ReturnType:
+#     pass
+
+# Callable[[str, int], ReturnType] means a function declare like:
+# def func(string: str, times: int) -> ReturnType:
+#     pass
+
+# Callable[..., ReturnType] means a function declare like:
+# def func(*args, **kwargs) -> ReturnType:
+#     pass
+
+def is_success(value) -> bool:
+    return value in (0, "OK", True, "success")
+
+resp = dict(code=0, message="OK", data=[])
+successed: bool = converter(resp["message"], mapper=is_success, default=False)
+```
+
+## Python Operators
+
+### Walrus {.col-span-2}
+
+```python
+values = [1, "text", True, "", 2]
+i = 0
+
+# It assigns a value to a variable and compares it in a boolean expression
+while (data := values[i]):
+
+    print(data, end=",")
+    i = i + 1
+
+# Expected result: 1, "text", True
+```
+
+## Date & Time Handling
+
+### Current date and time
+
+```python
+import datetime
+
+now = datetime.datetime.now()
+print(now)  # e.g., 2024-04-27 14:35:22.123456
+```
+
+### Creating specific date/time objects
+
+```python
+import datetime
+
+# Create a date object
+d = datetime.date(2024, 4, 27)
+print(d)  # 2024-04-27
+
+# Create a time object
+t = datetime.time(15, 30, 45)
+print(t)  # 15:30:45
+
+# Create a datetime object
+dt = datetime.datetime(2024, 4, 27, 15, 30, 45)
+print(dt)  # 2024-04-27 15:30:45
+```
+
+### Converting between date formats
+
+```python
+import datetime
+
+# Convert a string to a datetime object
+date_str = "2024-04-27 14:00"
+dt_obj = datetime.datetime.strptime(date_str, "%Y-%m-%d %H:%M")
+print(dt_obj)  # 2024-04-27 14:00:00
+
+# Convert a datetime object to a string
+formatted_str = dt_obj.strftime("%d/%m/%Y %H:%M")
+print(formatted_str)  # 27/04/2024 14:00
+```
+
+### Timestamps and Unix time
+
+```python
+import datetime
+
+# Get current timestamp
+timestamp = datetime.datetime.now().timestamp()
+print(timestamp)  # e.g., 1714188922.123456
+
+# Convert timestamp back to datetime
+dt_from_timestamp = datetime.datetime.fromtimestamp(timestamp)
+print(dt_from_timestamp)
+```
+
+### Date difference and timedelta {.col-span-2}
+
+```python
+import datetime
+
+date1 = datetime.date(2024, 4, 27)
+date2 = datetime.date(2024, 5, 1)
+
+delta = date2 - date1
+print(delta.days)  # 4
+
+# Using timedelta for date arithmetic
+new_date = date1 + datetime.timedelta(days=10)
+print(new_date)  # 2024-05-07
+```
+
+## Miscellaneous
 
 ### Comments
 
@@ -1297,6 +1728,7 @@ Miscellaneous
     as documentation.
 """
 ```
+
 ```python
 ''' Multiline strings can be written
     using three 's, and are often used
@@ -1304,8 +1736,8 @@ Miscellaneous
 '''
 ```
 
-
 ### Generators
+
 ```python
 def double_numbers(iterable):
     for i in iterable:
@@ -1314,8 +1746,8 @@ def double_numbers(iterable):
 
 Generators help you make lazy code.
 
-
 ### Generator to list
+
 ```python
 values = (-x for x in [1,2,3,4,5])
 gen_to_list = list(values)
@@ -1324,8 +1756,8 @@ gen_to_list = list(values)
 print(gen_to_list)
 ```
 
-
 ### Handle exceptions {.col-span-3}
+
 ```python
 try:
     # Use "raise" to raise an error
@@ -1338,4 +1770,47 @@ else:                    # Optional clause to the try/except block. Must follow 
     print("All good!")   # Runs only if the code in try raises no exceptions
 finally:                 # Execute under all circumstances
     print("We can clean up resources here")
+```
+
+### Dispatcher Pattern {.col-span-3}
+
+```python
+# Dispatcher allows dynamic selection and execution of functions based on user input or other runtime conditions
+
+def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    if y == 0:
+        return 'Error: Division by zero'
+    return x / y
+
+# Dispatcher dictionary: maps operation names to their corresponding functions
+operations = {
+    'add': add,
+    'subtract': subtract,
+    'multiply': multiply,
+    'divide': divide
+}
+
+# Function to dispatch operation based on operation name
+# Common use cases include executing different functions dynamically, such as in calculators, command interpreters, or event handling
+def dispatcher(operation_name, x, y):
+    func = operations.get(operation_name)
+    if func:
+        return func(x, y)
+    else:
+        return f"Unknown operation: {operation_name}"
+
+# Usage examples
+print(dispatcher('add', 5, 3))        # Output: 8
+print(dispatcher('multiply', 4, 2))   # Output: 8
+print(dispatcher('divide', 10, 0))    # Output: Error: Division by zero
+print(dispatcher('mod', 10, 3))       # Output: Unknown operation: mod
 ```

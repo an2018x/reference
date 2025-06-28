@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: QuickRef.ME
-subtitle: 'Quick Reference Cheat Sheet'
-description: 'Share quick reference and cheat sheet for developers'
-keywords: reference,cheatsheet,code table,snippets,linux
-author: QuickRef.ME
+title: CheatSheets.zip
+subtitle: "Ultimate Cheat for Developers"
+description: "Share quick reference and cheat sheet for developers"
+keywords: cheat,sheet,cheatsheets,reference,programming,code table,snippets,linux,command,shortcuts,developers
+author: CheatSheets.zip
 language: en
-timezone: ''
+timezone: ""
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://quickref.me
+url: https://cheatsheets.zip
 root: /
 permalink: :name.html
 permalink_defaults:
@@ -39,12 +39,13 @@ titlecase: false # Transform title into titlecase
 external_link:
   enable: true # Open external links in new tab
   field: site # Apply to the whole site
-  exclude: ''
+  exclude: ""
 filename_case: 1
 render_drafts: false
 post_asset_folder: false
 relative_link: false
 future: true
+syntax_highlighter: # empty to disable built-in syntax highlighting
 highlight:
   enable: false
 
@@ -53,7 +54,7 @@ highlight:
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
-  path: ''
+  path: ""
   per_page: 0
   order_by: -date
 
@@ -73,7 +74,7 @@ meta_generator: false
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
 ## Use post's date for updated date unless set in front-matter
-updated_option: 'date'
+updated_option: "date"
 
 # Pagination
 ## Set per_page to 0 to disable pagination
@@ -96,7 +97,11 @@ nofollow:
   enable: true
   field: site
   exclude:
-    - 'exclude1.com'
+    - "tableconvert.com"
+    - "dorefer.com"
+    - "fionaai.com"
+    - "github.com"
+    - "x.com"
 
 excerpt:
   depth: 2
@@ -104,11 +109,10 @@ excerpt:
   more_excludes: []
   hideWholePostExcerpts: true
 
-
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-#  - type: cjh_google_url_submitter
+  #  - type: cjh_google_url_submitter
   - type: cjh_bing_url_submitter
   - type: cjh_baidu_url_submitter
 
@@ -123,7 +127,6 @@ sitemap:
   tags: false
   categories: false
 
-
 # Markdown-it configuration
 ## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
 markdown:
@@ -133,12 +136,19 @@ markdown:
     breaks: false
     linkify: false
     typographer: false
-    quotes: '“”‘’'
+    quotes: "“”‘’"
+    langPrefix: "hljs language-"
   anchors:
     level: 2
-    collisionSuffix: ''
+    collisionSuffix: ""
     permalink: true
     permalinkClass: h-anchor
-    permalinkSymbol: '#'
+    permalinkSymbol: "#"
     case: 1
-    separator: '-'
+    separator: "-"
+
+# Browsersync configuration
+browsersync:
+  ui: false # disable ui
+  notify: false # disable notification
+  logLevel: silent # set log level to silent

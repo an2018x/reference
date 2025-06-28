@@ -5,6 +5,7 @@ recent_posts_limits: 4
 index_categories:
   - Programming
   - Toolkit
+  - Operating System
   - Linux Command
   - Python
   - Database
@@ -13,15 +14,14 @@ index_categories:
 
 # Home recommended posts
 index_recommends:
+  - chatgpt
   - bash
   - python
   - javascript
-  - golang
+  - go
   - vim
   - regex
   - awk
-  - markdown
-
 
 # Related popular posts
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
